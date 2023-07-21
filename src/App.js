@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { ProductContext } from "./components/ProductContext";
+import ProductList from "./components/ProductList";
+import ProductDetails from "./components/ProductDetails";
+import EditProduct from "./components/EditProduct";
+import AddProduct from "./components/AddProduct";
+import Loader from "./components/Loader";
 
-function App() {
+const App = () => {
+  const { items, counter, loading, loadMore } = useContext(ProductContext);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <ProductList
+                items={items}
+                counter={counter}
+                loadMore={loadMore}
+              />
+            }
+          />
+          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/product/edit/:id" element={<EditProduct />} />
+          <Route path="/product/add" element={<AddProduct />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
