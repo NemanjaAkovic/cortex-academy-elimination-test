@@ -19,21 +19,6 @@ function AddProduct() {
       price,
       description,
     };
-
-    //   fetch("https://dummyjson.com/products/add", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify(newProduct),
-    //   })
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //       addProduct(data);
-    //       navigate("/");
-    //     })
-    //     .catch((error) => {
-    //       console.error("Error adding product:", error);
-    //     });
-    // };
     addProduct(newProduct);
     navigate("/");
   };
