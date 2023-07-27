@@ -20,19 +20,22 @@ function AddProduct() {
       description,
     };
 
-    fetch("https://dummyjson.com/products/add", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newProduct),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        addProduct(data);
-        navigate("/");
-      })
-      .catch((error) => {
-        console.error("Error adding product:", error);
-      });
+    //   fetch("https://dummyjson.com/products/add", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(newProduct),
+    //   })
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       addProduct(data);
+    //       navigate("/");
+    //     })
+    //     .catch((error) => {
+    //       console.error("Error adding product:", error);
+    //     });
+    // };
+    addProduct(newProduct);
+    navigate("/");
   };
 
   return (
@@ -45,7 +48,7 @@ function AddProduct() {
         onChange={(e) => setTitle(e.target.value)}
       />
       <input
-        type="text"
+        type="number"
         placeholder="Price"
         value={price}
         onChange={(e) => setPrice(e.target.value)}

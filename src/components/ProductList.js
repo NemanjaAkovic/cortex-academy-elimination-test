@@ -11,14 +11,15 @@ function ProductList({ items, counter }) {
 
   return (
     <div>
-      <div className={classes.position}>
+      <header className={classes.header}>
+        <h1>Products</h1>
         <button
           onClick={() => navigate("/product/add")}
           className={classes.btn}
         >
           Add Product
         </button>
-      </div>
+      </header>
       <div className={classes.productContainer}>
         {displayedItems.map((item) => (
           <ProductItem key={item.id} product={item} />

@@ -4,10 +4,16 @@
   justify-items: center;
   gap: 4rem;
 }
-.position {
-  grid-column: 2 / 3;
+.header {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e6decf;
+}
+.header h1 {
+  color: #edc84b;
 }
 .btn {
   width: 10rem;
@@ -27,4 +33,10 @@
 }
 .btnLoadMore:hover {
   background-color: #e9bb24;
+}
+.position {
+  grid-column: 2 / 3;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
 }

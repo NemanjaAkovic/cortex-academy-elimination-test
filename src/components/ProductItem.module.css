@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
   border: 1px solid #edc84b;
   border-radius: 0.3rem;
   padding: 0.5rem;
@@ -16,6 +17,11 @@
 .productDescription {
   width: 90%;
   text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .btn {
   width: 100%;

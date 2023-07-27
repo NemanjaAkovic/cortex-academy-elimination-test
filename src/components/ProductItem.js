@@ -16,11 +16,11 @@ function ProductItem({ product }) {
     <div className={classes.product}>
       <div>
         <h3>{title}</h3>
-        <p>Id:{id}</p>
+        <p>Id: {id}</p>
         <img src={thumbnail} alt={title} />
       </div>
       <p>Price: {price}</p>
-      <p className={classes.productDescription}>Description{description}</p>
+      <p className={classes.productDescription}>Description: {description}</p>
       <div>
         <Link to={`/product/${id}`} className={classes.btn}>
           View Details

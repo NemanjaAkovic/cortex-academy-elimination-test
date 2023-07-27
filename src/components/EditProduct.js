@@ -39,7 +39,7 @@ function EditProduct() {
         onChange={(e) => setTitle(e.target.value)}
       />
       <input
-        type="text"
+        type="number"
         placeholder="Price"
         value={price}
         onChange={(e) => setPrice(e.target.value)}
